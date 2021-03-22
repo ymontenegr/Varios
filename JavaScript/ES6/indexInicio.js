@@ -112,4 +112,3 @@ const helloPromise = () => {
 helloPromise()
     .then(response => console.log(response))
     .catch(error => console.log(error))
-
