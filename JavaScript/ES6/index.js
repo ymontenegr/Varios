@@ -44,7 +44,38 @@ helloPromise()
 
 
  //módulos
+ //no funcionó
 
- import { hello } from './module.js';
+import {hello} from './module.js';
 
  console.log(hello());
+
+
+ //Generator
+ //para lógicas y algoritmos que se crean, como Fibonacci
+
+ function* helloWorld() {
+     if (true) {
+         yield 'Hola, ';
+     }
+     if (true) {
+         yield 'World';
+     }
+ }
+
+ const generatorHello = helloWorld();
+
+ console.log(generatorHello.next().value);
+ console.log(generatorHello.next().value);
+ console.log(generatorHello.next().value);
+
+
+ //ECMA SCRIPT 7
+
+
+ //doble línea
+
+ let lorem = 'hola'+'mundo'
+
+ console.log(lorem);
+ 

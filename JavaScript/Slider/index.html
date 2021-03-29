@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba slider</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container-all {
+    position: relative;
+    max-width: 408px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.slide {
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: all 600ms;
+    animation-name: autoplay;
+    animation-duration: 20s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.item-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 100%;
+}
+
+.pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+    text-align: center;
+    transition: all 600ms;
+}
+
+.pagination-item:hover {
+    transform: scale(2);
+}
+
+.pagination-item img {
+    display: inline-block;
+    max-width: none;
+    height: 100%;
+    transform: scale(1);
+    opacity: 0;
+    transition: all 600ms;
+}
+
+.pagination-item:hover img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[id="1"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(0, 0, 0);
+}
+
+input[id="1"]:checked ~ .pagination .pagination-item[for="1"] {
+    background: white;
+}
+
+input[id="2"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 1), 0, 0);
+}
+
+input[id="2"]:checked ~ .pagination .pagination-item[for="2"] {
+    background: white;
+}
+
+input[id="3"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 2), 0, 0);
+}
+
+input[id="3"]:checked ~ .pagination .pagination-item[for="3"] {
+    background: white;
+}
+
+input[id="4"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 3), 0, 0);
+}
+
+input[id="4"]:checked ~ .pagination .pagination-item[for="4"] {
+    background: white;
+}
+
+input[id="5"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 4), 0, 0);
+}
+
+input[id="5"]:checked ~ .pagination .pagination-item[for="5"] {
+    background: white;
+}
+
+input[id="6"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 5), 0, 0);
+}
+
+input[id="6"]:checked ~ .pagination .pagination-item[for="6"] {
+    background: white;
+}
+
+input[id="7"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 6), 0, 0);
+}
+
+input[id="7"]:checked ~ .pagination .pagination-item[for="7"] {
+    background: white;
+}
+
+input[id="8"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 7), 0, 0);
+}
+
+input[id="8"]:checked ~ .pagination .pagination-item[for="8"] {
+    background: white;
+}
+
+input[id="9"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 8), 0, 0);
+}
+
+input[id="9"]:checked ~ .pagination .pagination-item[for="9"] {
+    background: white;
+}
+
+input[id="10"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 9), 0, 0);
+}
+
+input[id="10"]:checked ~ .pagination .pagination-item[for="10"] {
+    background: white;
+}
+
+
+@keyframes autoplay {
+    /* Dividir 100% entre el número de imágenes 100/3 = 33%*/
+    10% {
+        transform: translate3d(calc(-100% * 0), 0, 0);
+    }
+    20% {
+        transform: translate3d(calc(-100% * 1), 0, 0);
+    }
+    30% {
+        transform: translate3d(calc(-100% * 2), 0, 0);
+    }
+    40% {
+        transform: translate3d(calc(-100% * 3), 0, 0);
+    }
+    50% {
+        transform: translate3d(calc(-100% * 4), 0, 0);
+    }
+    60% {
+        transform: translate3d(calc(-100% * 5), 0, 0);
+    }
+    70% {
+        transform: translate3d(calc(-100% * 6), 0, 0);
+    }
+    80% {
+        transform: translate3d(calc(-100% * 7), 0, 0);
+    }
+    90% {
+        transform: translate3d(calc(-100% * 8), 0, 0);
+    }
+    100% {
+        transform: translate3d(calc(-100% * 9), 0, 0);
+    }
+
+}
+    </style>
+</head>
+<body>
+    <div class="container-all">
+        <input type="radio" id="1" name="image-slide" hidden/>
+        <input type="radio" id="2" name="image-slide" hidden/>
+        <input type="radio" id="3" name="image-slide" hidden/>
+        <input type="radio" id="4" name="image-slide" hidden/>
+        <input type="radio" id="5" name="image-slide" hidden/>
+        <input type="radio" id="6" name="image-slide" hidden/>
+        <input type="radio" id="7" name="image-slide" hidden/>
+        <input type="radio" id="8" name="image-slide" hidden/>
+        <input type="radio" id="9" name="image-slide" hidden/>
+        <input type="radio" id="10" name="image-slide" hidden/>
+
+        <div class="slide">
+            <div class="item-slide">
+                <img src="../Slider/img/A1.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A2.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A3.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A4.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A5.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A6.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A7.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A8.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A9.png" alt="">
+            </div>
+            <div class="item-slide">
+                <img src="../Slider/img/A10.png" alt="">
+            </div>
+        </div>
+
+        <div class="pagination">
+
+            <label for="1" class="pagination-item">
+                <img src="../Slider/img/A1.png" alt="">
+            </label>
+            <label for="2" class="pagination-item">
+                <img src="../Slider/img/A2.png" alt="">
+            </label>
+            <label for="3" class="pagination-item">
+                <img src="../Slider/img/A3.png" alt="">
+            </label>
+            <label for="4" class="pagination-item">
+                <img src="../Slider/img/A4.png" alt="">
+            </label>
+            <label for="5" class="pagination-item">
+                <img src="../Slider/img/A5.png" alt="">
+            </label>
+            <label for="6" class="pagination-item">
+                <img src="../Slider/img/A6.png" alt="">
+            </label>
+            <label for="7" class="pagination-item">
+                <img src="../Slider/img/A7.png" alt="">
+            </label>
+            <label for="8" class="pagination-item">
+                <img src="../Slider/img/A8.png" alt="">
+            </label>
+            <label for="9" class="pagination-item">
+                <img src="../Slider/img/A9.png" alt="">
+            </label>
+            <label for="10" class="pagination-item">
+                <img src="../Slider/img/A10.png" alt="">
+            </label>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

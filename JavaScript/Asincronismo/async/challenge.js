@@ -1,7 +1,7 @@
 const fetchData = require('../utils/fetchData');
-const API = 'https://rickandmortyapi.com/api/character/'
+const API = 'https://rickandmortyapi.com/api/character/';
 
-const anotherFunction = async () => {
+const anotherFunction = async (url_api) => {
     try {
         const data = await fetchData(url_api);
         const character = await fetchData(`${API}${data.results[0].id}`);
